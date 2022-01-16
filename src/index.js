@@ -1,48 +1,24 @@
-
+import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import $ from 'jquery';
-import PokemonName from './pokemon-service.js'
+import { ExchangeProfile } from './currency.js';
+import MoneyService from './functions.js';
 
+$(document).ready(function() {
 
-function clearFields() {
-    $('#pokemon').val("");
-    $('.showErrors').text("");
-    $('.showName').text("");
-    $('.showImg').text("");
-  }
-  
-  function getInfo(response) {
-    if (response.forms) {
-      $('.showName').text(`${response.forms[0].name}`);
-      $('.showImg').html(`<img src=${response.sprites.other.dream_world.front_default}>`);
-      } else {
-      $('.showErrors').text(`There was an error: ${response}`);
-    }
-  }
-
-//   function getImg(response){
-//     console.log(response);
-//       if (response) {
-//         $('.showImg').html(`<img src=${response.}>`);
-//       } else {
-//         $('.showErrors').text(`There was an error: ${response}`);
-//       }
-//   }
-  
-  async function makeApiCall(number) {
-    const response = await PokemonName.getPokemon(number);
-    // const image = await PokemonName.displayPokemon(number);
-    getInfo(response);
-    // getImg(response);
-  }
-  
-  $(document).ready(function() {
-    $('#pokemonID').click(function() {
-      let pokemon = $('#pokemonNum').val();
-      clearFields();
-      makeApiCall(pokemon);
-    });
+  $('#exchange_submit').click(function(event) {
+      event.preventDefault();
+      const inputCurrency = $('#input_currency').val();
+      const inputAmount = $('#input_amount').val();
+      $('#exchange_results').html("Exchange Amount: ");
+      $('#input_amount').val("");
+      let promise = MoneyService.getMoney()
+      promise.then(function(rateResponse) {
+        let exchange1 = new ExchangeProfile(inputCurrency,inputAmount,rateResponse);
+        $('#exchange_results').append(`${exchange1.exchangeResults(inputCurrency,inputAmount)} ${inputCurrency}`);
+      });
+    })
   });
+
 
