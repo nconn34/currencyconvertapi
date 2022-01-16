@@ -1,30 +1,63 @@
+Currency Converter
+
+Author: Nathan Conn
+
+This is a webpage where a user can determine how much money their US dollar would exchange for before traveling!
+
+## Technologies Used
+
+* HTML
+* CSS
+* jQuery-3.6.0
+* Node.js
+* webpack
+* Lint
+* Babel
+* ExchangeRate-API
+
+## Description
+
+Users will be prompted to first select which country of interest they have for converting their currency to and then will be able to see a display for how their US dollar will convert to the given country's currency. A crucial step for planning any travel abroad!
+
+## Setup/Installation Requirements
+
+* Any browser, with a preference for Chrome
+
+* While filling out the form, be sure to accurately describe your age
+
+* If you are going to clone this, follow the instructions below:
+
 **Instructions for Cloning:
 
-If you set this as a template you can use it for any project when creating a new repository! After creating a new repository and selecting this as template, follow the intructions below in order.
+* In the command line enter:
 
-**In the command line enter:
+$ git clone https://github.com/nconn34/currencyconvertapi
 
-$ git clone https://github.com/yourGitHubusername/newrepositorynamehere
-
-** Then enter:
-
+* Then enter:
 
 $ npm install
 
-$ npm install dotenv-webpack@2.0.0 --save-dev (in case you have not run this previously)
-
-Create a .env file in your root directory and type "API_KEY="
-
-Then, in the .env add any API keys you are trying to work with.
-
-
-
 $ npm run build
-
-
-
 
 $ npm start will run the dev server
 
+**Instructions for getting API key
 
-Then you are ready to start testing and breaking code! Have fun!
+* Go to exchangerate-api.com to sign up for a free profile and free API key
+* You will be prompted to enter your email address, first name, and a password. Then, click "Get Started!"
+* Once you have a key, put it in the .env file with "API_KEY = {YOUR_KEY_HERE}" so that way your key will stay protected when pushing to your repository. It will also only work in the fetch statement as it is looking for the key in the .env file.
+* Be advised- the free key is rate limited!
+
+
+* Use this link to see the webpage in its current state: https://nconn34.github.io/currencyconvertapi/
+
+
+## Known Bugs
+
+* No known bugs, however I again did not make this page as functional as I would like to, nor as pretty. I tried many different ways to display the currency by specifying, and I tried attaching the call to individual buttons at first with the different countries, which worked but was a real mess and eventually got too confusing, so I scrapped it in favor of building a class, which only occurred to me last minute (as always) so this version is much more boiled down than I will attempt to make it at a later date.
+
+## License
+
+If you have any questions please use the contact information provided on the website.
+
+Copyright (c) 1/16/2022 Nathan Conn
