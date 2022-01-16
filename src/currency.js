@@ -1,19 +1,19 @@
-export class ExchangeRates {
-  constructor(inputCountry,inputDollar,exchangeRate) {
-    this.USD = exchangeRate.conversion_rates.USD,
-    this.AUD = exhcangeRate.conversion_rates.AUD,
-    this.EUR = exhcangeRate.conversion_rates.EUR,
-    this.JPY = exhcangeRate.conversion_rates.JPY,
-    this.MXN = exhcangeRate.conversion_rates.MXN,
-    this.HKD = exhcangeRate.conversion_rates.HKD,
-    this.inputDollar = inputDollar,
-    this.inputCountry = inputCountry,
-    this.outputAmount = this.exchangeResults(this.inputCountry, this.inputDollar)
+export class ExchangeProfile {
+    constructor(inputCurrency,inputAmount,exchangeRateObject) {
+      this.USD = exchangeRateObject.conversion_rates.USD,
+      this.EUR = exchangeRateObject.conversion_rates.EUR,
+      this.CHF = exchangeRateObject.conversion_rates.CHF,
+      this.JPY = exchangeRateObject.conversion_rates.JPY,
+      this.GBP = exchangeRateObject.conversion_rates.GBP,
+      this.AUD = exchangeRateObject.conversion_rates.AUD,
+      this.inputCurrency = inputCurrency,
+      this.inputAmount = inputAmount,
+      this.outputAmount = this.exchangeResults(this.inputCurrency,this.inputAmount)
+    }
+  
+    exchangeResults(inputCurrency,inputAmount) { 
+    let exchangeValue = this[inputCurrency];
+    let result = exchangeValue*inputAmount;
+    return result;
+    }
   }
-
-exchangeResults(inputCountry,inputDollar){
-  let exchange = this(inputCountry);
-  let result = exchange*inputDollar;
-  return result;
- }
-}
