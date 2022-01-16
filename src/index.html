@@ -1,19 +1,47 @@
-<!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <title>Pokedex</title>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Get Info on a Pokemon!</h1>
-      <label for="pokemonNum">Enter an index:</label>
-      <input id="pokemonNum" type="text" />
-      <button class="btn-success" id="pokemonID">
-        Get ID and Info about Pokemon
-      </button>
-      <div class="showErrors"></div>
-      <div class="showName"></div>
-      <div class="showImg"></div>
+<head>
+  <title>Currency Exchanger</title>
+</head>
+<body class="inverted">
+  <div class='container'>
+    <div class='showErrors'></div>
+    <div class='jumbotron inverted display-2 justify-content-center'>
+      Currency Exchanger<iframe id="head_img" src="https://giphy.com/embed/l2YOp5fNAFMp63B3a" width="480" height="389" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> 
     </div>
-  </body>
+    <div class="row justify-content-center">
+      <div class='col-3'>
+        <label for="initial_currency">Select your initial currency:</label>
+        <br>
+        <select class="form-control" id="initial_currency">
+          <option value="USD">USD</option>
+        </select>
+      </div>
+      <div class='col-3'>
+        <label for="color">Currency to exchange for:</label>
+        <br>
+        <select class="form-control" id="input_currency">
+          <option value="EUR">EUR</option>
+          <option value="CHF">CHF</option>
+          <option value="JPY">JPY</option>
+          <option value="GBP">GBP</option>
+          <option value="AUD">AUD</option>
+        </select>
+        <br>
+        <br>
+      </div>
+      <div class='col-3'>
+        <label for="manufacturer">Enter the amount to exchange:</label>
+        <br>
+        <input id="input_amount" class='form-control' type="number">
+      </div>
+    </div>
+    <div class='row justify-content-center'>
+      <button class="btn-success" id="exchange_submit">Exchange!</button>
+    </div>
+    <div class='row justify-content-center medium_font'>
+        <div id='exchange_results'>
+        </div>
+  </div>
+  </div>
+</body>
 </html>
