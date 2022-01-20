@@ -7,7 +7,7 @@ export class ExchangeRates {
       this.GBP = exchange.conversion_rates.GBP,
       this.currency = currency,
       this.dollar = dollar,
-      this.conversion = this.exchangeRate(this.currency,this.dollar)
+      this.exchange = this.exchangeRate(this.currency,this.dollar)
     }
   
     exchangeRate(currency,dollar) { 
@@ -16,5 +16,11 @@ export class ExchangeRates {
     return result;
     }
   }
+
+  // export function exchangeRate(currency,dollar) { 
+  //   let rate = this[currency];
+  //   let result = rate*dollar;
+  //   return result;
+  //   }
 
 
